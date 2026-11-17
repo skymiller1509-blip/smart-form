@@ -1,0 +1,14 @@
+{
+  "name": "smart-form",
+  "version": "1.0.0",
+  "description": "AI-Powered Dynamic Web Components: one smart-form template. Type a prompt, the form builds its fields from simple keyword rules (MOCK, no LLM). The form is rendered as a real Hyper Elements Page template.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hyper-elements/react": "^0.4.6",
+    "react": "^19.0.0"
+  }
+}

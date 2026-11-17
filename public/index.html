@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Form — a Hyper Elements template</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>&lt;smart-form&gt;</h1>
+    <p class="tagline">Type a prompt. The form builds itself.</p>
+    <p><span class="badge mock">MOCK</span> The fields are picked by simple keyword rules, not by an AI model. No LLM, no API key, no cost, nothing is sent anywhere.</p>
+  </header>
+
+  <section class="prompt-box">
+    <label for="prompt">What is this form for?</label>
+    <div class="prompt-row">
+      <input id="prompt" type="text" placeholder="e.g. book a table for Friday night" autocomplete="off">
+      <button id="build">Build my form</button>
+    </div>
+    <div id="samples" class="samples"></div>
+    <p id="error" class="error" hidden></p>
+  </section>
+
+  <section id="result" hidden>
+    <h2 id="form-title"></h2>
+    <p id="form-desc" class="muted"></p>
+    <p id="form-rule" class="muted small"></p>
+
+    <form id="live-form" novalidate></form>
+    <button id="submit-form" class="primary">Submit (demo only)</button>
+    <div id="thanks" class="thanks" hidden></div>
+
+    <h2>The Hyper Elements template</h2>
+    <p class="muted">The same form, rendered as a real Hyper Elements <code>Page</code> template with <code>render()</code> from <code>@hyper-elements/react</code>. One template, one component tree, rendered to HTML.</p>
+    <div class="tabs">
+      <button id="tab-render" class="tab active">Rendered page</button>
+      <button id="tab-jsx" class="tab">Template source (JSX)</button>
+    </div>
+    <iframe id="preview" title="Hyper Elements rendered page"></iframe>
+    <pre id="jsx" hidden></pre>
+  </section>
+
+  <footer>
+    <h2>How it works</h2>
+    <ol>
+      <li>You type a prompt, like "book a table" or "report a bug".</li>
+      <li>The server matches keywords in your prompt to a rule. "book" or "table" gives a booking form. "bug" gives a bug report. Nothing is sent to an AI model.</li>
+      <li>The live form above is built from those fields, and you can fill it in.</li>
+      <li>The same fields are rendered as a Hyper Elements <code>Page</code> template: a heading, a description, and a table of fields, styled once with <code>defineTheme</code>.</li>
+    </ol>
+    <p class="muted">Built for the Hyper Elements Template Challenge. One template, one smart-form component, one working flow.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
